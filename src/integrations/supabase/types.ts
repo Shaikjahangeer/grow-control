@@ -14,7 +14,93 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      career_applications: {
+        Row: {
+          address: string
+          applied_before: string | null
+          created_at: string
+          department: string | null
+          dob: string
+          email: string
+          employment: string | null
+          father_name: string
+          full_name: string
+          gender: string
+          id: string
+          message: string
+          phone: string
+          qualification: string
+          referred: string | null
+        }
+        Insert: {
+          address: string
+          applied_before?: string | null
+          created_at?: string
+          department?: string | null
+          dob: string
+          email: string
+          employment?: string | null
+          father_name: string
+          full_name: string
+          gender: string
+          id?: string
+          message: string
+          phone: string
+          qualification: string
+          referred?: string | null
+        }
+        Update: {
+          address?: string
+          applied_before?: string | null
+          created_at?: string
+          department?: string | null
+          dob?: string
+          email?: string
+          employment?: string | null
+          father_name?: string
+          full_name?: string
+          gender?: string
+          id?: string
+          message?: string
+          phone?: string
+          qualification?: string
+          referred?: string | null
+        }
+        Relationships: []
+      }
+      inquiries: {
+        Row: {
+          city: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string
+          product: string | null
+        }
+        Insert: {
+          city?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone: string
+          product?: string | null
+        }
+        Update: {
+          city?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string
+          product?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
