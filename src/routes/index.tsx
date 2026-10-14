@@ -63,7 +63,7 @@ function Index() {
         <div className="relative">
           <img src={asset("img/home-image.jpg")} alt="Grow Control engineering" loading="lazy" className="w-full clip-corner object-cover" />
           <div className="absolute -bottom-6 -right-2 bg-primary px-7 py-5 text-primary-foreground md:-right-6">
-            <div className="font-display text-4xl font-bold">Since 2000s</div>
+            <div className="font-display text-4xl font-bold">20+ Years</div>
             <div className="text-xs font-semibold uppercase tracking-widest">Indigenous technology</div>
           </div>
         </div>
