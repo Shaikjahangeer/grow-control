@@ -89,7 +89,7 @@ function Careers() {
             {input("dob", "Date of Birth (DD-MM-YYYY) *")}
             <div>
               {sel("gender", "Gender *", ["Male", "Female", "Others"])}
-              {errors.gender && <p className="mt-1 text-xs text-destructive">{errors.gender}</p>}
+              {errors["gender"] && <p className="mt-1 text-xs text-destructive">{errors["gender"]}</p>}
             </div>
             {input("address", "Address *")}
             {input("qualification", "Qualification *")}
@@ -100,7 +100,7 @@ function Careers() {
             <div className="sm:col-span-2">
               <label htmlFor="message" className="sr-only">Message</label>
               <textarea id="message" name="message" rows={5} placeholder="Type your message *" className={fieldCls} />
-              {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
+              {errors["message"] && <p className="mt-1 text-xs text-destructive">{errors["message"]}</p>}
             </div>
             {state === "error" && <p className="text-sm text-destructive sm:col-span-2">Something went wrong. Please try again.</p>}
             <button disabled={state === "sending"} className="inline-flex h-13 items-center gap-2 justify-self-start bg-primary px-8 text-sm font-bold uppercase tracking-wider text-primary-foreground hover:bg-foreground disabled:opacity-60">

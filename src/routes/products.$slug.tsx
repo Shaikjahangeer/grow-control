@@ -107,7 +107,7 @@ function ProductPage() {
               <Link to="/products" hash={slugify(cat.label)} className="font-bold text-primary">View category →</Link>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {related.map((s) => <ProductCard key={s} product={products[s]} />)}
+              {related.map((s) => <ProductCard key={s} product={products[s]!} />)}
             </div>
           </div>
         </section>

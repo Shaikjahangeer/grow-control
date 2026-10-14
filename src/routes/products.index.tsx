@@ -23,7 +23,7 @@ function Grid({ nodes }: { nodes: TreeNode[] }) {
     <div className="space-y-10">
       {leaves.length > 0 && (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {leaves.filter((n) => !seen.has(n.slug!) && seen.add(n.slug!)).map((n) => <ProductCard key={n.slug} product={products[n.slug!]} label={n.label} />)}
+          {leaves.filter((n) => !seen.has(n.slug!) && seen.add(n.slug!)).map((n) => <ProductCard key={n.slug} product={products[n.slug!]!} label={n.label} />)}
         </div>
       )}
       {groups.map((g) => (
