@@ -21,9 +21,9 @@ export function Header() {
         <div className="container-x flex h-10 items-center justify-between text-xs">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2"><MapPin className="size-3.5 text-primary" />Tarnaka, Hyderabad</span>
-            <a href={`mailto:${company.emails[0]}`} className="flex items-center gap-2 hover:text-ink-foreground"><Mail className="size-3.5 text-primary" />{company.emails[0]}</a>
+            <a href={`mailto:${company.emails[0]!}`} className="flex items-center gap-2 hover:text-ink-foreground"><Mail className="size-3.5 text-primary" />{company.emails[0]!}</a>
           </div>
-          <a href={telHref(company.phones[0])} className="flex items-center gap-2 hover:text-ink-foreground"><Phone className="size-3.5 text-primary" />{company.phones[0]}</a>
+          <a href={telHref(company.phones[0]!)} className="flex items-center gap-2 hover:text-ink-foreground"><Phone className="size-3.5 text-primary" />{company.phones[0]}</a>
         </div>
       </div>
       <div className="border-b bg-card/95 backdrop-blur">

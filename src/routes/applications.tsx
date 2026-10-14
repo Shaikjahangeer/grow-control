@@ -34,7 +34,7 @@ function Applications() {
                 {slugs.map((s) => (
                   <li key={s}>
                     <Link to="/products/$slug" params={{ slug: s }} className="group flex items-center justify-between gap-3 border-b py-3 text-sm font-semibold hover:text-primary">
-                      {products[s].title}<ArrowUpRight className="size-4 shrink-0 text-muted-foreground group-hover:text-primary" />
+                      {products[s]!.title}<ArrowUpRight className="size-4 shrink-0 text-muted-foreground group-hover:text-primary" />
                     </Link>
                   </li>
                 ))}
