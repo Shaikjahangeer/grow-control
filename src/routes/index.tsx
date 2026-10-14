@@ -31,11 +31,11 @@ function Index() {
         <img src={hero} alt="Power electronics cabinets in the Grow Control lab" className="absolute inset-0 size-full object-cover" width={1920} height={1088} />
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="container-x relative flex min-h-[78vh] flex-col justify-center py-24">
-          <p className="eyebrow mb-6 animate-rise">Welcome to Grow Control Power Tech</p>
-          <h1 className="max-w-4xl animate-rise text-6xl font-bold uppercase md:text-8xl">
+          <p className="eyebrow mb-6">Welcome to Grow Control Power Tech</p>
+          <h1 className="max-w-4xl text-6xl font-bold uppercase md:text-8xl">
             Pioneering power electronics for the <span className="text-primary">defense sector</span>
           </h1>
-          <p className="mt-7 max-w-xl animate-rise text-lg text-ink-muted">
+          <p className="mt-7 max-w-xl text-lg text-ink-muted">
             Mission-critical systems for the Army, Air Force, Navy and defense research organizations — from initial concept to final product.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -73,7 +73,7 @@ function Index() {
             <p><strong className="text-foreground">GROW CONTROL</strong> is a research-driven leader in the design and development of advanced power electronics solutions tailored for defense applications. With over two decades of expertise, we specialize in creating mission-critical systems for the Army, Air Force, Navy, and defense research organizations.</p>
             <p>Our dedicated team of over 100 professionals, including more than 30 experienced engineers, offers end-to-end services — from initial concept development to the final product — ensuring the highest standards of performance and reliability.</p>
           </div>
-          <Link to="/about" className="mt-8 inline-flex items-center gap-2 font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all">More about us <ArrowRight className="size-4" /></Link>
+          <Link to="/about" className="mt-8 inline-flex items-center gap-2 font-bold uppercase tracking-wider text-primary transition-colors hover:opacity-80">More about us <ArrowRight className="size-4" /></Link>
         </div>
       </section>
 
@@ -86,14 +86,14 @@ function Index() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredCategories.map((c, i) => (
               <Link key={c.slug} to="/products/$slug" params={{ slug: c.slug }} className="group relative block aspect-[4/5] overflow-hidden bg-ink">
-                <img src={c.img} alt={c.title} loading="lazy" className="size-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={c.img} alt={c.title} loading="lazy" className="size-full object-cover" />
                 <div className="absolute inset-0 bg-bottom-overlay" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-7 text-ink-foreground">
                   <div>
                     <div className="mb-2 font-display text-sm font-semibold text-primary">0{i + 1}</div>
                     <h3 className="text-3xl font-bold uppercase">{c.title}</h3>
                   </div>
-                  <span className="flex size-12 shrink-0 items-center justify-center bg-primary text-primary-foreground transition-transform group-hover:rotate-45"><ArrowUpRight className="size-5" /></span>
+                  <span className="flex size-12 shrink-0 items-center justify-center bg-primary text-primary-foreground"><ArrowUpRight className="size-5" /></span>
                 </div>
               </Link>
             ))}

@@ -18,7 +18,7 @@ export function PageHeader({ title, eyebrow, crumbs = [], children }: { title: s
           ))}
         </nav>
         {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
-        <h1 className="max-w-4xl animate-rise text-5xl font-bold uppercase md:text-7xl">{title}</h1>
+        <h1 className="max-w-4xl text-5xl font-bold uppercase md:text-7xl">{title}</h1>
         {children}
       </div>
     </section>

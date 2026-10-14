@@ -36,9 +36,9 @@ export function Header() {
               "mega" in n ? (
                 <div key={n.to} className="group relative">
                   <Link to={n.to} className="flex items-center gap-1 px-3 py-6 text-sm font-semibold text-foreground transition-colors hover:text-primary" activeProps={{ className: "text-primary" }}>
-                    {n.label}<ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+                    {n.label}<ChevronDown className="size-3.5" />
                   </Link>
-                  <div className="invisible absolute left-1/2 top-full w-[56rem] -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full w-[56rem] -translate-x-1/2 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                     <div className="grid grid-cols-3 gap-x-8 gap-y-5 border-t-2 border-primary bg-card p-7 shadow-card">
                       {productTree.map((c) => (
                         <Link key={c.label} to="/products" hash={slugify(c.label)} className="group/i">

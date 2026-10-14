@@ -24,9 +24,9 @@ function Gallery() {
       <PageHeader title="Our Gallery" crumbs={[{ label: "Gallery" }]} />
       <div className="container-x grid gap-5 py-20 sm:grid-cols-2 lg:grid-cols-4">
         {gallery.map((g, i) => (
-          <button key={g.src} onClick={() => setOpen(i)} className="group border bg-card text-left transition-all hover:-translate-y-1 hover:border-primary hover:shadow-card">
+          <button key={g.src} onClick={() => setOpen(i)} className="group border bg-card text-left transition-colors hover:border-primary hover:shadow-card">
             <div className="flex aspect-square items-center justify-center overflow-hidden p-5">
-              <img src={g.src} alt={g.title || "Grow Control product"} loading="lazy" className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+              <img src={g.src} alt={g.title || "Grow Control product"} loading="lazy" className="max-h-full max-w-full object-contain" />
             </div>
             {g.title && <p className="border-t px-4 py-3 font-display text-lg font-semibold uppercase">{g.title}</p>}
           </button>
