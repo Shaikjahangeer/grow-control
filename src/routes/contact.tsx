@@ -3,6 +3,7 @@ import { z } from "zod";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { InquiryForm } from "@/components/site/InquiryForm";
+import { SocialLinks } from "@/components/site/SocialLinks";
 import { company, telHref } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
@@ -44,6 +45,10 @@ function Contact() {
               <h2 className="mb-3 text-2xl font-bold uppercase">Email</h2>
               {company.emails.map((e) => <a key={e} href={`mailto:${e}`} className="block text-sm hover:text-primary">{e}</a>)}
             </div>
+          </div>
+          <div className="border bg-card p-7">
+            <h2 className="mb-4 text-2xl font-bold uppercase">Follow Us</h2>
+            <SocialLinks size="size-5" itemClassName="size-11" />
           </div>
         </div>
         <div className="border-t-4 border-primary bg-card p-8 shadow-card md:p-10">

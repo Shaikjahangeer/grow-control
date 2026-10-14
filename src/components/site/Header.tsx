@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { SocialLinks } from "./SocialLinks";
 import { company, productTree, slugify, telHref } from "@/lib/site";
 
 const nav = [
@@ -23,7 +24,7 @@ export function Header() {
             <span className="flex items-center gap-2"><MapPin className="size-3.5 text-primary" />Tarnaka, Hyderabad</span>
             <a href={`mailto:${company.emails[0]!}`} className="flex items-center gap-2 hover:text-ink-foreground"><Mail className="size-3.5 text-primary" />{company.emails[0]!}</a>
           </div>
-          <a href={telHref(company.phones[0]!)} className="flex items-center gap-2 hover:text-ink-foreground"><Phone className="size-3.5 text-primary" />{company.phones[0]}</a>
+          <div className="flex items-center gap-5"><a href={telHref(company.phones[0]!)} className="flex items-center gap-2 hover:text-ink-foreground"><Phone className="size-3.5 text-primary" />{company.phones[0]}</a><SocialLinks className="gap-1" itemClassName="size-7 border-transparent text-ink-muted" size="size-3.5" /></div>
         </div>
       </div>
       <div className="border-b bg-card/95 backdrop-blur">
@@ -73,6 +74,7 @@ export function Header() {
                   {n.label}
                 </Link>
               ))}
+              <SocialLinks className="py-4" />
             </div>
           </nav>
         )}

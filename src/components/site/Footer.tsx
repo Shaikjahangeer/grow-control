@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { SocialLinks } from "./SocialLinks";
 import { company, productTree, slugify, telHref } from "@/lib/site";
 
 export function Footer() {
@@ -20,13 +21,7 @@ export function Footer() {
           <p className="mt-5 text-sm leading-relaxed">
             Research-driven design and development of advanced power electronics solutions for defense, research and industry.
           </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {company.socials.map((s) => (
-              <a key={s.name} href={s.href} target="_blank" rel="noreferrer" className="border border-ink-border px-3 py-1.5 text-xs font-semibold text-ink-foreground transition-colors hover:border-primary hover:text-primary">
-                {s.name}
-              </a>
-            ))}
-          </div>
+           <SocialLinks className="mt-6" itemClassName="border-ink-border text-ink-foreground" />
         </div>
         <div>
           <h3 className="mb-5 text-lg font-semibold uppercase text-ink-foreground">Useful Links</h3>
