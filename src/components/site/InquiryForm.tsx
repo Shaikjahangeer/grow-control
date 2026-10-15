@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendFormEmail } from "@/lib/emailjs";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Please enter your name").max(120),
@@ -34,6 +35,9 @@ export function InquiryForm({ defaultProduct = "" }: { defaultProduct?: string }
       name: v.name, email: v.email, phone: v.phone, city: v.city || null, product: v.product || null, message: v.message,
     });
     if (error) { setState("error"); return; }
+    try {
+      await sendFormEmail({ form_type: "Website Enquiry", name: v.name, email: v.email, phone: v.phone, city: v.city, product: v.product, message: v.message });
+    } catch (err) { console.error(err); }
     setState("done");
     (e.target as HTMLFormElement).reset();
   }
