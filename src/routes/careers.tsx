@@ -5,6 +5,7 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { PageHeader } from "@/components/site/PageHeader";
 import { fieldCls } from "@/components/site/InquiryForm";
 import { supabase } from "@/integrations/supabase/client";
+import { sendFormEmail } from "@/lib/emailjs";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -58,7 +59,12 @@ function Careers() {
     const { error } = await supabase.from("career_applications").insert({
       ...v, department: v.department || null, referred: v.referred || null, employment: v.employment || null, applied_before: v.applied_before || null,
     });
-    setState(error ? "error" : "done");
+    if (error) { setState("error"); return; }
+    const { full_name, ...rest } = v;
+    try {
+      await sendFormEmail({ form_type: "Careers Application", name: full_name, ...rest });
+    } catch (err) { console.error(err); }
+    setState("done");
   }
 
   const input = (name: string, ph: string, type = "text") => (
